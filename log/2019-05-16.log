@@ -1,0 +1,17 @@
+2019-05-16 13:29:08,597 - E:\pengpai_news_spider\spiderLib\Main.py[line:51] - ERROR: (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost:24567)\nNet-Lib error during Unknown error (10060)\n')
+Traceback (most recent call last):
+  File "src\pymssql.pyx", line 636, in pymssql.connect
+  File "src\_mssql.pyx", line 1957, in _mssql.connect
+  File "src\_mssql.pyx", line 676, in _mssql.MSSQLConnection.__init__
+  File "src\_mssql.pyx", line 1683, in _mssql.maybe_raise_MSSQLDatabaseException
+_mssql.MSSQLDatabaseException: (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost:24567)\nNet-Lib error during Unknown error (10060)\n')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\pengpai_news_spider\spiderLib\Main.py", line 20, in main_pengpai
+    conn = self.db_conn()
+  File "E:\pengpai_news_spider\spiderLib\Base.py", line 40, in db_conn
+    return pymssql.connect(host=server, user=user, password=password, database=database, charset=charset, port=port)
+  File "src\pymssql.pyx", line 642, in pymssql.connect
+pymssql.OperationalError: (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost:24567)\nNet-Lib error during Unknown error (10060)\n')
